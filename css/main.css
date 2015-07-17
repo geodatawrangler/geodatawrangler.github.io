@@ -19,7 +19,11 @@ nav ul li, footer ul li {
 }
 a {
     text-decoration: none;
-    color: #999;
+    color: #292A67;
+}
+a:visted
+{
+    color: #E0CAEC;
 }
 a:hover {
     text-decoration: underline;
@@ -27,11 +31,12 @@ a:hover {
 h1 {
     font-size: 3em;
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
+    color:#202D60;
 }
 p {
     font-size: 1.5em;
     line-height: 1.4em;
-    color: #333;
+    color: #202D60;
 }
 footer {
     border-top: 1px solid #d5d5d5;
@@ -41,8 +46,10 @@ footer {
 ul.posts { 
     margin: 20px auto 40px; 
     font-size: 1.5em;
+    color:#202D60;
 }
 
 ul.posts li {
     list-style: none;
+    color:#202D60;
 }
