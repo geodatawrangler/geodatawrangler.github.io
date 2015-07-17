@@ -5,10 +5,10 @@ layout: feed
 <feed xmlns="http://www.w3.org/2005/Atom">
 
 	<title>Tales of Wrangling Geodata</title>
-	<link href="http://geodatawrangler.github.io/blog/atom.xml" rel="self"/>
-	<link href="http://geodatawrangler.github.io/blog"/>
+	<link href="http://geodatawrangler.lazym8.com/blog/atom.xml" rel="self"/>
+	<link href="http://geodatawrangler.lazym8.com/blog"/>
 	<updated>{{ site.time | date_to_xmlschema }}</updated>
-	<id>http://geodatawrangler.github.io/blog</id>
+	<id>http://geodatawrangler.azym8.com/blog</id>
 	<author>
 		<name>Paul McCombs</name>
 	</author>
@@ -16,9 +16,9 @@ layout: feed
 	{% for post in site.posts %}
 		<entry>
 			<title>{{ post.title }}</title>
-			<link href="http://geodatawrangler.github.io{{ post.url }}"/>
+			<link href="http://geodatawrangler.lazym8.com{{ post.url }}"/>
 			<updated>{{ post.date | date_to_xmlschema }}</updated>
-			<id>http://geodatawrangler.github.io/{{ post.id }}</id>
+			<id>http://geodatawrangler.lazym8.com/{{ post.id }}</id>
 			<content type="html">{{ post.content | xml_escape }}</content>
 		</entry>
 	{% endfor %}
