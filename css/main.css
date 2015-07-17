@@ -27,16 +27,12 @@ nav ul li, footer ul li {
     display: inline;
     margin-right: 20px;
 }
-a {
-    text-decoration: none;
+a:link {
     color: #292A67;
 }
 a:visted
 {
     color: #E0CAEC;
-}
-a:hover {
-    text-decoration: underline;
 }
 h1 {
     font-size: 3em;
