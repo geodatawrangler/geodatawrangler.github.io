@@ -1,5 +1,5 @@
 body {
-    background-image: url(branding.png);
+    background-image: url(../branding.png);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center;
