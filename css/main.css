@@ -5,7 +5,7 @@ body {
     background-position: center;
     background-color: black;
 }
-div.white div.container {
+div.white, div.container {
 	border-radius: 10px;
 	background-color: white;
 	background-color: rgba(255, 255, 255, 0.7);
