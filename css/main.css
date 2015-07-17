@@ -33,6 +33,16 @@ h1 {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
     color:#202D60;
 }
+h2 {
+    font-size: 2em;
+    font-family:'Helvetica', 'Arial', 'Sans-Serif';
+    color:#202D60;
+}
+h3 {
+    font-size: 1em;
+    font-family:'Helvetica', 'Arial', 'Sans-Serif';
+    color:#202D60;
+}
 p {
     font-size: 1.5em;
     line-height: 1.4em;
