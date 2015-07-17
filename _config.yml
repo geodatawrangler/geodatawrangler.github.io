@@ -1,2 +1,3 @@
 name: Paul McCombs, Geodata Wrangler
 markdown: kramdown
+permalink: /blog/:year/:month/:day/:title
