@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Let's access some proprietary data formats."
+date: 2015-07-17
 ---
 
 Working to solve a image processing problem, I found this enticing [tutorial]( http://briantjacobs.com/mrsid-gdal-homebrew/) from Brian T. Jacobs.
