@@ -20,8 +20,7 @@ Here's a quick agenda for our upcoming Tuesday August 11 meeting:
 
 I look forward to seeing all of you.  This meeting will be held on August 11, from 6:30-8:30 pm at the Richmond Beach branch of the King County Library.  Here's the address:
 
-  >19601 21st Ave. NW
-  >
-  >Shoreline, WA 98177
+  > 19601 21st Ave. NW
+  > Shoreline, WA 98177
 
 Regards, Stu Smith
