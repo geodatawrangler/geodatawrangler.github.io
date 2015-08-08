@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Markdown Nested List Test"
-date: 2015-08-04
+date: 2015-08-07
 schedule: 2015-08-11T18:30:00.0-7
 ---
 
