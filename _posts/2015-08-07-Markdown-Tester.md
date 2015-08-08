@@ -5,6 +5,13 @@ date: 2015-08-07
 schedule: 2015-08-11T18:30:00.0-7
 ---
 
+*   This is just text.
+    * this is a sub list item
+      * this is a sub sub list item
+* This is just text,
+    spanning two lines
+  * this is a nested list item.
+
 Hello All,
 Here's a quick agenda for our upcoming Tuesday August 11 meeting:
 
