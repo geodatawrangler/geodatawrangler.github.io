@@ -19,9 +19,9 @@ div.white, div.container {
 	margin: 0 auto;
     padding: 10px;
 }
-li { 
-    color: red;
-    font-size: 1.5em;
+ol, ul { 
+    color: #202D60;
+    font-size: 1.2rem;
 }
 nav ul, footer ul {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
@@ -42,10 +42,10 @@ a:visted
     color: #E0CAEC;
 }
 h1 {
-    font-size: 3em;
+    font-size: 2.5em;
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
     color:#202D60;
-    text-algin:center;
+    text-align:center;
 }
 h2 {
     font-size: 2em;
@@ -53,13 +53,12 @@ h2 {
     color:#202D60;
 }
 h3 {
-    font-size: 1em;
+    font-size: 1.5em;
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
     color:#202D60;
 }
 p {
-    font-size: 1.5em;
-    line-height: 1.4em;
+    font-size: 1.2em;
     color: #202D60;
 }
 footer {
