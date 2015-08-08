@@ -21,9 +21,7 @@ div.white, div.container {
 }
 
 li { 
-    margin: 20px auto 40px; 
-    font-size: 1.5em;
-    color: #202D60;
+    color: #red;
 }
 
 nav ul, footer ul {
