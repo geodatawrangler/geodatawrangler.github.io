@@ -20,10 +20,10 @@ div.white, div.container {
     padding: 10px;
 }
 
-ul { 
+ol, ul { 
     margin: 20px auto 40px; 
     font-size: 1.5em;
-    color: red;
+    color: #202D60;
 }
 
 nav ul, footer ul {
