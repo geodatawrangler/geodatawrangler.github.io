@@ -62,13 +62,13 @@ footer {
     font-size: .8em;
 }
 
-ol.posts, ul.posts { 
+ul.posts { 
     margin: 20px auto 40px; 
     font-size: 1.5em;
     color:#202D60;
 }
 
-ol.posts ol, ul.posts li {
+ul.posts li {
     font-size: 1.5em;
     line-height: 1.4em;
     color: #202D60;
