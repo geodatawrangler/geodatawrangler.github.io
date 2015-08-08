@@ -21,7 +21,7 @@ div.white, div.container {
 }
 li { 
     color: red;
-    font-size: 1em;
+    font-size: 3em;
 }
 nav ul, footer ul {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
