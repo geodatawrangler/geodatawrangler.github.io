@@ -4,11 +4,22 @@ title: Tales of Wrangling Geodata
 ---
 	<h1>{{ page.title }}</h1>
 	
-	<h3>Here are some discoveries, experiences and thoughts about working with Geographic data with emphasis on free and open source sofware.</h3>
-	
-	<ul class="posts">
+	<h3>Here are some discoveries, experiences and thoughts about working with Geographic data with emphasis on free and open source software.</h3>
 
-	  {% for post in site.posts %}
-	    <li><span>{{ post.date | date_to_string }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
-	  {% endfor %}
-	</ul>
+<ul class="posts">
+
+    {% for post in site.posts %}
+        <li><span>{{ post.date | date_to_string }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+    {% endfor %}
+</ul>
+
+    <p>
+         Find me arround the web: <a href="https://github.com/mccombsp-kingco">mccombs-kingco@GitHub</a>; <a href="https://github.com/geodatawrangler">geodatawrangler@GitHub</a>; or <a href="https://twitter.com/KCGISMaster">KCGISMaster@Twitter</a>.
+    </p>
+    <p>
+        Meet me in and arround Seattle at: <a href="http://cugos.org/">Cascadia Users of Geospatial Open Source (CUGOS)</a>;
+        <a href="http://maptimesea.github.io/">MaptimeSEA</a>;
+        <a href="http://www.meetup.com/OpenStreetMap-Seattle/">OpenStreetMap Seattle</a>;
+        or
+        <a href="http://www.meetup.com/Puget-Sound-QGIS-Users-Group/">Puget Sound QGIS User's Group (PSQGIS)</a>
+    </p>
