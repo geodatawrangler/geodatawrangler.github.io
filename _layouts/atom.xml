@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
 	<title>Tales of Wrangling Geodata</title>
-	<link href="http://geodatawrangler.lazym8.com/blog"/>
+	<link href="http://geodatawrangler.lazym8.com"/>
 	<link href="http://geodatawrangler.lazym8.com/blog/atom.xml" rel="self"/>
 	<updated>{{ site.time | date_to_xmlschema }}</updated>
-	<id>http://geodatawrangler.azym8.com/blog</id>
+	<id>http://geodatawrangler.azym8.com</id>
 	<author>
 		<name>Paul McCombs</name>
 	</author>
