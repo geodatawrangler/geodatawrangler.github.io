@@ -8,7 +8,7 @@ date: 2017-02-16
 
 A coworker had some [MySQL dump files](https://dev.mysql.com/doc/refman/5.7/en/mysqldump-sql-format.html) but no longer had a MySQL installation. I thought it would be a quick job to convert the dump files into something more portable.
 
-I could do a quick install of MySQL on my Mac, bring in the dump file and export it to a portable format. I'd just use [Homebrew](https://www.postgresql.org/) to install it and I'd be rolling. Wait! Homebrew is hosed on my computer. So first a detour to get Homebrew working.
+I could do a quick install of MySQL on my Mac, bring in the dump file and export it to a portable format. I'd just use [Homebrew](https://brew.sh/) to install it and I'd be rolling. Wait! Homebrew is hosed on my computer. So first a detour to get Homebrew working.
 
 ### Installing MySQL on a Mac with Homebrew
 
