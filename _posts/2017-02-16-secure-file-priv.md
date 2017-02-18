@@ -62,6 +62,7 @@ I googled my heart out and read many pieces of advice across several different f
 >
 >*Previously, the secure_file_priv system variable was empty by default. Now the default value is platform specific and depends on the value of the INSTALL_LAYOUT CMake option, as shown in the following table.*"
 
+Many of the forum posts I found were written before this change and were horribly confusing. The default value of secure_file_priv for the Homebrew install of MySQL 5.7.17 was NULL, which prevented me from writing with outfile entirely. To change secure_file_priv I first had to find the configuration file. According to my research it was named my.cnf and located in one of dozens of different places depending on who you believe. The forum posts I found were split between many versions of MySQL and various operating systems.
 
 ### The Solution
 
@@ -73,6 +74,7 @@ Which returned in part the following list of locations:
 >"*Default options are read from the following files in the given order:
 /etc/my.cnf /etc/mysql/my.cnf /usr/local/etc/my.cnf ~/.my.cnf*"
 
+The Homebrew install does not create a my.cnf by default, so I had to make one of my own. I decided to put the configuration file in my user directory and found this [helpful tip](https://github.com/piwik/piwik/issues/9528) on what to put in it.
 
 After creating ~/.my.cnf with the following contents, I was ready to try creating my outfile again.
 ```
