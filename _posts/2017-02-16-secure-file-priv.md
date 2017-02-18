@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "MySQL: What the Hell is the --secure-file-priv option?"
+title: "MySQL: What in the Hell is the --secure-file-priv option?"
 date: 2017-02-16
 ---
 
@@ -12,9 +12,9 @@ I could do a quick install of MySQL on my Mac, bring in the dump file and export
 
 ### Installing MySQL on a Mac with Homebrew
 
-The directory permission were changed when I upgraded to OSX 10.11 (El Capitan) I hadn't had cause to figure out the [fix](https://digitizor.com/fix-homebrew-permissions-osx-el-capitan/). Also I'd subsequently upgraded to macOS 10.12 (Sierra).
+The directory permissions were changed when I upgraded to OSX 10.11 (El Capitan) I hadn't had cause to figure out the [fix](https://digitizor.com/fix-homebrew-permissions-osx-el-capitan/). In the process, I also upgraded to macOS 10.12 (Sierra).
 
-When Homebrew is working it's a dream. You install open source software just like you would in Linux with [apt](https://wiki.debian.org/Apt) or [yum](https://en.wikipedia.org/wiki/Yellowdog_Updater,_Modified). After a bit of googling I found [instructions to uninstall Homebrew](http://superuser.com/questions/203707/how-to-uninstall-homebrew-mac-os-x-package-manager).
+When Homebrew is working it's a dream. Open source software is installed just like it would be in Linux with [apt](https://wiki.debian.org/Apt) or [yum](https://en.wikipedia.org/wiki/Yellowdog_Updater,_Modified). After a bit of googling I found [instructions to uninstall Homebrew](http://superuser.com/questions/203707/how-to-uninstall-homebrew-mac-os-x-package-manager).
 ```bash
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)"
 ```
@@ -31,9 +31,9 @@ mysql.server start
 ```
 and I was ready to roll<sup>[1](#myfootnote1)</sup> with MySQL. Or was I?
 
-### What the Hell is the --secure-file-priv option?
+### What in the Hell is the --secure-file-priv option?
 
-With many thanks to [Stack Overflow](http://stackoverflow.com/questions/17666249/how-to-import-an-sql-file-using-the-command-line-in-mysql) I was able to quickly load the dump files into my brand new MySQL server:
+With many thanks to [Stack Overflow](http://stackoverflow.com/questions/17666249/how-to-import-an-sql-file-using-the-command-line-in-mysql) The dump files were loaded into my brand new MySQL server:
 In mysql:
 ```sql
 create database sailwx_info_shiptracks;
@@ -45,7 +45,7 @@ mysql -u root -h localhost sailwx_info_shiptracks < duwamish2.sql
 mysql -u root -h localhost sailwx_info_shiptracks < duwamish3.sql
 ```
 
-After some poking around I found out about [```SELECT ... INTO OUTFILE```](https://dev.mysql.com/doc/refman/5.7/en/select-into.html) syntax for MySQL. The more portable alternative to the dump files I started out with. I thought my job was complete, but then I see it, an error I don't understand.
+After some poking around I found this [```SELECT ... INTO OUTFILE```](https://dev.mysql.com/doc/refman/5.7/en/select-into.html) syntax for MySQL. The more portable alternative to the dump files I'd started out with. I thought my job was complete, but then found an error I didn't understand.
 
 ```sql
 select * from reportSources into outfile '/Users/paulmccombs/reportSources.txt';
@@ -54,7 +54,7 @@ ERROR 1290 (HY000): The MySQL server is running with the --secure-file-priv opti
 
 ### Oh, That's What it Means!
 
-I googled my heart out and read many pieces of advise across several different forum postings. No one had the complete answer for me, and that is what inspired me to share my struggle. The first key to removing my confusion was learning of [a change at MySQL version 5.7.6](https://dev.mysql.com/doc/relnotes/mysql/5.7/en/news-5-7-6.html)
+I googled my heart out and read many pieces of advice across several different forum postings. No one had a complete answer though, hence I've been inspired to share my struggle and triumphant solution. The first key to removing confusion was learning this [a change at MySQL version 5.7.6](https://dev.mysql.com/doc/relnotes/mysql/5.7/en/news-5-7-6.html)
 
 >"*secure_file_priv can be set to NULL to disable all import and export operations.*
 >
@@ -62,7 +62,6 @@ I googled my heart out and read many pieces of advise across several different f
 >
 >*Previously, the secure_file_priv system variable was empty by default. Now the default value is platform specific and depends on the value of the INSTALL_LAYOUT CMake option, as shown in the following table.*"
 
-Many of the forum posts I found were written before this change and confused me horribly. The default value of secure_file_priv for the Homebrew install of MySQL 5.7.17 was NULL, preventing me from writing outfile entirely. To change secure_file_priv I first had to find the configuration file. According to my research it was named my.cnf and located in one of dozens of different places depending on who you should believe. The forum posts I found were split between many versions of MySQL and various operating systems.
 
 ### The Solution
 
@@ -74,7 +73,6 @@ Which returned in part the following list of locations:
 >"*Default options are read from the following files in the given order:
 /etc/my.cnf /etc/mysql/my.cnf /usr/local/etc/my.cnf ~/.my.cnf*"
 
-The Homebrew install does not create a my.cnf by default. So I had to make one of my own. I decided to put the configuration file in my user directory and found [this helpful tip](https://github.com/piwik/piwik/issues/9528) on what to put in it.
 
 After creating ~/.my.cnf with the following contents, I was ready to try creating my outfile again.
 ```
@@ -93,4 +91,4 @@ Query OK, 12 rows affected (0.04 sec)
 
 Success!!!
 
-<a name="myfootnote1"><sup>1</sup></a> Note here I am starting MySQL manually as I don't intend to have the server running on my computer all of the time. Just for the one project. So there is no need for me to set it up to auto start.
+<a name="myfootnote1"><sup>1</sup></a> Note here I am starting MySQL manually because I don't intend to have the server running on my computer all of the time. Just for the one project. So there is no need for me to set it up to auto start.
