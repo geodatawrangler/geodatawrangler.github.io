@@ -14,7 +14,7 @@ My initial attempt is partially documented below in _*First Install - Aquamacs*_
 This post will be a living document. Currently the formatting is rough. I'm using this post as a test-bed for [Magit](https://magit.vc) portion of the content.
 
 ## Second Install - Homebrew
-1. `brew cask install Emacs`
+1. `brew cask install emacs`
 2. Configure Interface - add items to init.el
     1. Line Numbers:
         + create file `~/.emacs.d/init.el` and add:
