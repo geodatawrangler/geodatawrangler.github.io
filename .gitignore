@@ -1,1 +1,5 @@
+#the local rendered code that I don't need github to have
 _site/
+
+#emacs temp files
+*~
