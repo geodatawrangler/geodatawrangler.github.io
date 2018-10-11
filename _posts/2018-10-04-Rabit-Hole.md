@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Down the Emacs Rabit Hole"
-date: 2018-10-04
+date: 2018-10-10
 ---
 
 This post will be a living document. Currently the formatting is very rough, but I'm using this post as a testbed for the very content that it contains (in part).
