@@ -1,21 +1,20 @@
 ---
 layout: post
-title: "Down the Emacs Rabit Hole"
+title: "Down the Emacs Rabbit Hole"
 date: 2018-10-10
 ---
+Over the years I have followed the [holy](https://www.gnu.org/fun/jokes/gospel.html) [war](https://en.wikipedia.org/wiki/Editor_war) between [vi](https://en.wikipedia.org/wiki/Vi) and [Emacs](https://en.wikipedia.org/wiki/Emacs) with some interest. As a university student and a GIS Analyst using various versions of Unix, I was handed vi and taught to use it. vi was omnipresent and could be learned to a passable level in a short amount of time. So, I was a vi user. Emacs was alluring though. The old joke, that Emacs is "a great operating system, lacking only a decent editor"[1], was both a draw to and a caution against it's use. I tried it out a few times, but the requirement to learn so many commands with multiple meta keys was too much bother. I would give up after an hour or two, when I had to look up open a file for the eighth time.
 
-This post will be a living document. Currently the formatting is very rough, but I'm using this post as a testbed for the very content that it contains (in part).
+At the same time, I was experimenting with various ways of keeping track of my huge backlog of "to do" items. Often hundred's of items long. Tracking it in a Word document, tracking it in an excel spreadsheet. Using tabs in steno note book. When I finally gave up the fight and switched from paper notes to Microsoft OneNote, I started keeping the list in there. It did not work that well. Also, I have an ever growing fear that when Microsoft decides to move from OneNote to the next great thing, all my notes will be locked inside its proprietary file format. I've been burned with that problem in the past.
 
-Over the years I have followed the religious war between vi and emacs with mild interest. As a university student and a HP UX workstation using professional I was handed vi and taught to use it. vi was ominpresent and could be learned to a passable level in a short amount of time. So I was a vi user by default. Emacs on however was aluring. The old joke "It's a great operating system, all it needs is a decent text editor." was both a draw to and a caution against it's use. I tried it out a few times, but the requirement to learn so many commands with multiple meta keys was just too much. I would give up in an hour or two when I had to look up again how to open a file or close out of the program.
-
-At the same time, I was experimenting with various ways of keeping track of my huge backlog of "to do" items. Oftens hundred's of items long. Tracking it in a Word document, tracking it in an excell spreadsheet. Using tabs in steno note book. When I finally gave up the fight and switched from paper notes to Microsoft OneNote, I started keeping the list in there. It did not work that well. Also, I have an ever growing fear that when Microsoft decides to move from OneNote to the next great thing, all my notes will be locked inside its proprietary file format. I've been burned with that problem in the past.
-
-I became aware of Org Mode. It was built within the platform that is Emacs. It uses plain text files. It has fantastic miraculous sounding capabilities. It can be version controled with git. I can store it in the cloud. I've become familiar with using Markdown and Jekyl to publish my blogs on GitHub and I love the plain text files being used for markup. So I took a serious stab at using emacs for the first time.
+I became aware of Org Mode. It was built within the platform that is Emacs. It uses plain text files. It has fantastic miraculous sounding capabilities. It can be version controlled with git. I can store it in the cloud. I've become familiar with using Markdown and Jekyll to publish my blogs on GitHub and I love the plain text files being used for markup. So I took a serious stab at using Emacs for the first time.
 
 My initial attempt is partially documented below in _*First Install - Aquamacs*_. While at the same time using it on my Windows 8.1 computer at work. That became frustrating because of the differences associated with Aquamacs. So I've set out to document fully how I got Emacs with Org Mode and all its other wonders in _*Second Install - Homebrew*_.
 
+This post will be a living document. Currently the formatting is rough. I'm using this post as a test-bed for [Magit](https://magit.vc) portion of the content.
+
 ## Second Install - Homebrew
-1. `brew cask install emacs`
+1. `brew cask install Emacs`
 2. Configure Interface - add items to init.el
     1. Line Numbers:
         + create file `~/.emacs.d/init.el` and add:
@@ -60,7 +59,7 @@ My initial attempt is partially documented below in _*First Install - Aquamacs*_
 	  (define-key global-map "\C-ca" 'org-agenda)
 	  (setq org-log-done 'time)
 	  ```
-   2. For each .org file you want to particpate in the Agenda open the file and issue command C-c [
+   2. For each .org file you want to participate in the Agenda open the file and issue command C-c [
    
    3. Create a [Custom Agenda Command](https://orgmode.org/worg/org-tutorials/org-custom-agenda-commands.html)
    
@@ -181,3 +180,6 @@ _/Users/paulmccombs/Library/Preferences/Aquamacs Emacs/customizations.el_
  ;; If there is more than one, they won't work right.
  )
 ```
+
+### Foot Notes ###
+[1] [Editor war, _Wikipedia, The Free Encyclopedia_](https://en.wikipedia.org/w/index.php?title=Editor_war&oldid=862368474) (last visited Oct. 11, 2018).
