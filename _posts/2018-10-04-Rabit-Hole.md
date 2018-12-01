@@ -1,60 +1,70 @@
 ---
 layout: post
 title: "Down the Emacs Rabbit Hole"
-date: 2018-10-10
+date: 2018-12-01
 ---
+
 Over the years I have followed the [holy](https://www.gnu.org/fun/jokes/gospel.html) [war](https://en.wikipedia.org/wiki/Editor_war) between [vi](https://en.wikipedia.org/wiki/Vi) and [Emacs](https://en.wikipedia.org/wiki/Emacs) with some interest. As a university student and a GIS Analyst using various versions of Unix, I was handed vi and taught to use it. vi was omnipresent and could be learned to a passable level in a short amount of time. So, I was a vi user. Emacs was alluring though. The old joke, that Emacs is "a great operating system, lacking only a decent editor"[1], was both a draw to and a caution against it's use. I tried it out a few times, but the requirement to learn so many commands with multiple meta keys was too much bother. I would give up after an hour or two, when I had to look up open a file for the eighth time.
 
 At the same time, I was experimenting with various ways of keeping track of my huge backlog of "to do" items. Often hundred's of items long. Tracking it in a Word document, tracking it in an excel spreadsheet. Using tabs in steno note book. When I finally gave up the fight and switched from paper notes to Microsoft OneNote, I started keeping the list in there. It did not work that well. Also, I have an ever growing fear that when Microsoft decides to move from OneNote to the next great thing, all my notes will be locked inside its proprietary file format. I've been burned with that problem in the past.
 
 I became aware of Org Mode. It was built within the platform that is Emacs. It uses plain text files. It has fantastic miraculous sounding capabilities. It can be version controlled with git. I can store it in the cloud. I've become familiar with using Markdown and Jekyll to publish my blogs on GitHub and I love the plain text files being used for markup. So I took a serious stab at using Emacs for the first time.
 
-My initial attempt is partially documented below in _*First Install - Aquamacs*_. While at the same time using it on my Windows 8.1 computer at work. That became frustrating because of the differences associated with Aquamacs. So I've set out to document fully how I got Emacs with Org Mode and all its other wonders in _*Second Install - Homebrew*_.
+My initial attempt is partially documented below in **_First Install - Aquamacs_**. While at the same time using it on my Windows 8.1 computer at work. That became frustrating because of the differences associated with Aquamacs. So I've set out to document fully how I got Emacs with Org Mode and all its other wonders in **_Fresh Install - Homebrew_**.
 
-This post will be a living document. Currently the formatting is rough. I'm using this post as a test-bed for [Magit](https://magit.vc) portion of the content.
+### This post is a living document:
 
-## Second Install - Homebrew
-1. `brew cask install emacs`
+* I'm using this post as a test-bed for the [Magit](https://magit.vc) portion of the content.
+* **December 1, 2018** Fixed formatting and updated with experience installing emacs on a completely fresh 2018 Mac Mini with Mojave.
+
+## Fresh Install - Homebrew ##
+1. Install Emacs
+   1. Install [homebrew](https://brew.sh/)
+   3. At terminal propmpt type `brew cask install emacs`
+   2. For MacOS 10.14 (Mojave) it is neccesary to allow Emacs to control your computer.
+	  It will prompt you when it tries to do something that is not yet permitted. This is a setting in the _Security & Privacy_ panel in _System Preferences_ under the _Privacy_ tab with _Accessibility_ selected.
 2. Configure Interface - add items to init.el
     1. Line Numbers:
         + create file `~/.emacs.d/init.el` and add:
-
-            ```(global-linum-mode t)
-            ```
-
+		  ```
+		  (global-linum-mode t)
+		  ```
+	
     2. Recent Files
         * Add to init.el:
-
-			```(recentf-mode 1)
-			(setq recentf-max-menu-items 25)
-			(global-set-key "\C-x\ \C-r" 'recentf-open-files)
-			```
+		  ```
+		  (recentf-mode 1)
+		  (setq recentf-max-menu-items 25)
+		  (global-set-key "\C-x\ \C-r" 'recentf-open-files)
+		  ```
 
 	3. Visual Line Mode - wraps lines on word breaks
 	    * Add to init.el: `(global-visual-line-mode t)`
 
-    4. Configure MELA repository for packages
-	    * Add to init.el
-
-			```(require 'package)
-            (add-to-list 'package-archives
-			             '("melpa-stable" . "https://stable.melpa.org/packages/"))
-            (package-initialize)
-            ```
-	5. [Turn on Parenthesis Matching](https://www.gnu.org/software/emacs/manual/html_node/efaq/Matching-parentheses.html)
+	4. [Turn on Parenthesis Matching](https://www.gnu.org/software/emacs/manual/html_node/efaq/Matching-parentheses.html)
 	   * Add `(show-paren-mode 1)` to init.el
+
+	5. Configure MELA repository for packages
+	   * Add to init.el
+	   ```
+	   (require 'package)
+	   (add-to-list 'package-archives
+		   '("melpa-stable" . "https://stable.melpa.org/packages/"))
+       (package-initialize)
+       ```
 	
 3. Markdown Mode for Emacs
     1. [Install package](https://jblevins.org/projects/markdown-mode/).
        * M-x package-install RET markdown-mode RET
-    2. [Pandoc](https://pandoc.org/) was previously installed.
-       * Apparently using anaconda.
+    2. [Pandoc](https://pandoc.org/)
+       * At Terminal Prompt type `brew install Pandoc`
     3. Add to init.el inside the `(custom-set-variables` section before the final `)`:
-       *`'(markdown-command "/Users/paulmccombs/anaconda3/bin/pandoc")`
+       * `'(markdown-command "/usr/local/bin/pandoc")`
 
 4. [Org Mode](https://orgmode.org/worg/org-tutorials/orgtutorial_dto.html)
    1. Add to init.el:
-	  ```(require 'org)
+      ```
+	  (require 'org)
 	  (define-key global-map "\C-cl" 'org-store-link)
 	  (define-key global-map "\C-ca" 'org-agenda)
 	  (setq org-log-done 'time)
@@ -66,22 +76,21 @@ This post will be a living document. Currently the formatting is rough. I'm usin
       * __NOTE__ you can use: M-x customize-variable RET org-agenda-custom-commands
 	  
 	  * Otherwise, add the following text to init.el inside the `(custom-set-variables` section. The "n" option was included already I added the "L" section to do a [2 week agenda](https://emacs.stackexchange.com/questions/12517/how-do-i-make-the-timespan-shown-by-org-agenda-start-yesterday) with log mode turned on.
-   
-	  ```
-	  '(org-agenda-custom-commands
-   (quote
-    (("L" "Time (L)ine - Biweekly Report" agenda ""
-      (
-       (org-agenda-start-day "-14d")
-       (org-agenda-span 14)
-       (org-agenda-start-on-weekday nil)
-       (org-agenda-start-with-log-mode '(closed clock state))
-      )
-     )
-          ("n" "Agenda and all TODOs"
-           ((agenda "" nil)
-            (alltodo "" nil))\
-           nil))))
+		```
+		'(org-agenda-custom-commands
+		(quote
+			(("L" "Time (L)ine - Biweekly Report" agenda ""
+				(
+					(org-agenda-start-day "-14d")
+					(org-agenda-span 14)
+					(org-agenda-start-on-weekday nil)
+					(org-agenda-start-with-log-mode '(closed clock state))
+				)
+				)
+				("n" "Agenda and all TODOs"
+					((agenda "" nil)
+					(alltodo "" nil))\
+				nil))))
 	  ```
    
 5. Auto-Complete 
@@ -96,25 +105,32 @@ This post will be a living document. Currently the formatting is rough. I'm usin
 	  
 6. [Spell Checking](https://stackoverflow.com/questions/19022015/emacs-on-mac-os-x-how-to-get-spell-check-to-work)
    1. At Terminal Prompt
-	  `brew install aspell --with-all-langs`
-	  `which aspell`
-   3. Return from last prompt similar to `/usr/local/bin/aspell`
-   4. Run Customize... from Edit->Spell menu
-   5. Set ispell-program-name variable to `/usr/local/bin/aspell` or other return from earlier prompt command.
-   2. Run Spell-Check Buffer from Edit->Spell menu
-   3. Note: Flyspell can work but needs a functional mouse-2 click which requires hackery for macOS track-pad.
+	  ```
+	  brew install aspell --with-all-langs
+	  which aspell
+	  ```
+   2. Copy the response from last command. Similar to: `/usr/local/bin/aspell`
+   3. Run Customize... from Edit->Spell menu
+   4. Set ispell-program-name variable to `/usr/local/bin/aspell` or other return from earlier prompt command.
+   5. Run Spell-Check Buffer from Edit->Spell menu
+   6. Note: Flyspell can work but needs a functional mouse-2 click which requires hackery for macOS track-pad.
 
 7. [Magit](https://magit.vc/manual/magit/Installing-from-an-Elpa-Archive.html#Installing-from-an-Elpa-Archive): git version control
    1. M-x package-refresh-contents [RET]
    2. M-x package-install [RET] magit [RET]
    3. Test version numbers: M-x magit-version [RET]
-	  Result: Magit 2.13.0, Git 2.17.1 (Apple Git-112), Emacs 26.1, darwin
+	  ```
+	  Magit 2.90.1, Git 2.17.2 (Apple Git-113), Emacs 26.1, darwin
+	  ```
    4. Add a global key binding for magit-status to initl.el
+	  ```
 	  ;; Configure magit
 	  ;; https://magit.vc/manual/magit/Getting-Started.html#Getting-Started
 	  (global-set-key (kbd "C-x g") 'magit-status)
+	  ```
+   5. Note: I have not yet learned how to clone a repository with Magit
 
-7. [Mu4e](http://cachestocaches.com/2017/3/complete-guide-email-emacs-using-mu-and-/) - e-mail client
+8. [Mu4e](http://cachestocaches.com/2017/3/complete-guide-email-emacs-using-mu-and-/) - e-mail client
 
 
 ## First Install - Aquamacs ##

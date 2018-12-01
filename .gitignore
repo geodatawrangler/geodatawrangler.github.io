@@ -1,5 +1,9 @@
 #the local rendered code that I don't need github to have
 _site/
 
+#some MacOS hidden file
+.DS_Store
+
 #emacs temp files
 *~
+.#*
