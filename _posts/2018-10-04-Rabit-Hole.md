@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Down the Emacs Rabbit Hole"
-date: 2018-12-01
+date: 2019-01-17
 ---
 
 Over the years I have followed the [holy](https://www.gnu.org/fun/jokes/gospel.html) [war](https://en.wikipedia.org/wiki/Editor_war) between [vi](https://en.wikipedia.org/wiki/Vi) and [Emacs](https://en.wikipedia.org/wiki/Emacs) with some interest. As a university student and a GIS Analyst using various versions of Unix, I was handed vi and taught to use it. vi was omnipresent and could be learned to a passable level in a short amount of time. So, I was a vi user. Emacs was alluring though. The old joke, that Emacs is "a great operating system, lacking only a decent editor"[1], was both a draw to and a caution against it's use. I tried it out a few times, but the requirement to learn so many commands with multiple meta keys was too much bother. I would give up after an hour or two, when I had to look up open a file for the eighth time.
@@ -15,6 +15,7 @@ My initial attempt is partially documented below in **_First Install - Aquamacs_
 ### This post is a living document:
 
 * I'm using this post as a test-bed for the [Magit](https://magit.vc) portion of the content.
+* **January 17, 2019** Figured out how to push-to-deploy.
 * **December 1, 2018** Fixed formatting and updated with experience installing emacs on a completely fresh 2018 Mac Mini with Mojave.
 
 ## Fresh Install - Homebrew ##
@@ -128,7 +129,9 @@ My initial attempt is partially documented below in **_First Install - Aquamacs_
 	  ;; https://magit.vc/manual/magit/Getting-Started.html#Getting-Started
 	  (global-set-key (kbd "C-x g") 'magit-status)
 	  ```
-   5. Note: I have not yet learned how to clone a repository with Magit
+   5. __NOTE__ [Regarding push-to-deploy](https://codingitwrong.com/wiki/git-push-to-deploy)
+	  One of the things I hoped to accomplish with Magit in emacs is a simple solution for publishing my static hand-crafted [personal website](https://www.lazym8.com). I was struggling because default behavior requires using two branches and then automating the merge to the master branch using [git hooks](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks), which was on my list to figure out, but since I don't ever edit the files on the server, push-to-deploy is more straight-forward. In the remote repository on the web server you only need to configure git with `git config receive.denyCurrentBranch updateInstead`  
+   6. __NOTE__ I have not yet learned how to clone a repository with Magit
 
 8. [Mu4e](http://cachestocaches.com/2017/3/complete-guide-email-emacs-using-mu-and-/) - e-mail client
 
