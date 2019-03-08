@@ -17,13 +17,13 @@ My initial attempt is partially documented below in **_First Install - Aquamacs_
 * I'm using this post as a test-bed for the [Magit](https://magit.vc) portion of the content.
 * **March 7, 2019** Added list of enhancements to explore, and added a note about Orgzly.
 * **January 17, 2019** Figured out how to push-to-deploy.
-* **December 1, 2018** Fixed formatting and updated with experience installing emacs on a completely fresh 2018 Mac Mini with Mojave.
+* **December 1, 2018** Fixed formatting and updated with experience installing Emacs on a completely fresh 2018 Mac Mini with Mojave.
 
 ## Fresh Install - Homebrew ##
 1. Install Emacs
-   1. Install [homebrew](https://brew.sh/)
-   3. At terminal propmpt type `brew cask install emacs`
-   2. For MacOS 10.14 (Mojave) it is neccesary to allow Emacs to control your computer.
+   1. Install [Homebrew](https://brew.sh/)
+   3. At terminal prompt type `brew cask install emacs`
+   2. For MacOS 10.14 (Mojave) it is necessary to allow Emacs to control your computer.
 	  It will prompt you when it tries to do something that is not yet permitted. This is a setting in the _Security & Privacy_ panel in _System Preferences_ under the _Privacy_ tab with _Accessibility_ selected.
 2. Configure Interface - add items to init.el
     1. Line Numbers:
@@ -46,7 +46,7 @@ My initial attempt is partially documented below in **_First Install - Aquamacs_
 	4. [Turn on Parenthesis Matching](https://www.gnu.org/software/emacs/manual/html_node/efaq/Matching-parentheses.html)
 	   * Add `(show-paren-mode 1)` to init.el
 
-	5. Configure MELA repository for packages
+	5. Configure MELPA repository for packages
 	   * Add to init.el
 	   ```
 	   (require 'package)
@@ -92,7 +92,7 @@ My initial attempt is partially documented below in **_First Install - Aquamacs_
 					(alltodo "" nil))\
 				nil))))
 	  ```
-    4. Org files in the cloud. I have started expirimenting with [Orgzly](http://www.orgzly.com) and keeping an org file synced on my Android phone, my laptop, and my desktop. It's working OK so far.
+    4. Org files in the cloud. I have started experimenting with [Orgzly](http://www.orgzly.com) and keeping an org file synced on my Android phone, my laptop, and my desktop. It's working OK so far.
 
 5. Auto-Complete 
    1. [Install package](https://github.com/auto-complete/auto-complete).
