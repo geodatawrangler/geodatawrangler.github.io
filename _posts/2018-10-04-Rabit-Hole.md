@@ -13,8 +13,7 @@ I became aware of Org Mode. It was built within the platform that is Emacs. It u
 My initial attempt is partially documented below in **_First Install - Aquamacs_**. While at the same time using it on my Windows 8.1 computer at work. That became frustrating because of the differences associated with Aquamacs. So I've set out to document fully how I got Emacs with Org Mode and all its other wonders in **_Fresh Install - Homebrew_**.
 
 ### This post is a living document:
-
-* I'm using this post as a test-bed for the [Magit](https://magit.vc) portion of the content.
+I'm using this post as a test-bed for the [Magit](https://magit.vc) portion of the content.
 * **March 7, 2019** Added list of enhancements to explore, and added a note about Orgzly.
 * **January 17, 2019** Figured out how to push-to-deploy.
 * **December 1, 2018** Fixed formatting and updated with experience installing Emacs on a completely fresh 2018 Mac Mini with Mojave.
