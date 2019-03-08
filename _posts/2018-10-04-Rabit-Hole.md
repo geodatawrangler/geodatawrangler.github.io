@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Down the Emacs Rabbit Hole"
-date: 2019-01-17
+date: 2019-03-07
 ---
 
 Over the years I have followed the [holy](https://www.gnu.org/fun/jokes/gospel.html) [war](https://en.wikipedia.org/wiki/Editor_war) between [vi](https://en.wikipedia.org/wiki/Vi) and [Emacs](https://en.wikipedia.org/wiki/Emacs) with some interest. As a university student and a GIS Analyst using various versions of Unix, I was handed vi and taught to use it. vi was omnipresent and could be learned to a passable level in a short amount of time. So, I was a vi user. Emacs was alluring though. The old joke, that Emacs is "a great operating system, lacking only a decent editor"[1], was both a draw to and a caution against it's use. I tried it out a few times, but the requirement to learn so many commands with multiple meta keys was too much bother. I would give up after an hour or two, when I had to look up open a file for the eighth time.
@@ -15,6 +15,7 @@ My initial attempt is partially documented below in **_First Install - Aquamacs_
 ### This post is a living document:
 
 * I'm using this post as a test-bed for the [Magit](https://magit.vc) portion of the content.
+* **March 7, 2019** Added list of enhancements to explore, and added a note about Orgzly.
 * **January 17, 2019** Figured out how to push-to-deploy.
 * **December 1, 2018** Fixed formatting and updated with experience installing emacs on a completely fresh 2018 Mac Mini with Mojave.
 
@@ -39,7 +40,7 @@ My initial attempt is partially documented below in **_First Install - Aquamacs_
 		  (global-set-key "\C-x\ \C-r" 'recentf-open-files)
 		  ```
 
-	3. Visual Line Mode - wraps lines on word breaks
+    3. Visual Line Mode - wraps lines on word breaks
 	    * Add to init.el: `(global-visual-line-mode t)`
 
 	4. [Turn on Parenthesis Matching](https://www.gnu.org/software/emacs/manual/html_node/efaq/Matching-parentheses.html)
@@ -70,13 +71,11 @@ My initial attempt is partially documented below in **_First Install - Aquamacs_
 	  (define-key global-map "\C-ca" 'org-agenda)
 	  (setq org-log-done 'time)
 	  ```
-   2. For each .org file you want to participate in the Agenda open the file and issue command C-c [
+    2. For each .org file you want to participate in the Agenda open the file and issue command C-c [
    
-   3. Create a [Custom Agenda Command](https://orgmode.org/worg/org-tutorials/org-custom-agenda-commands.html)
-   
-      * __NOTE__ you can use: M-x customize-variable RET org-agenda-custom-commands
-	  
-	  * Otherwise, add the following text to init.el inside the `(custom-set-variables` section. The "n" option was included already I added the "L" section to do a [2 week agenda](https://emacs.stackexchange.com/questions/12517/how-do-i-make-the-timespan-shown-by-org-agenda-start-yesterday) with log mode turned on.
+    3. Create a [Custom Agenda Command](https://orgmode.org/worg/org-tutorials/org-custom-agenda-commands.html)
+    * __NOTE__ you can use: M-x customize-variable RET org-agenda-custom-commands
+    * Otherwise, add the following text to init.el inside the `(custom-set-variables` section. The "n" option was included already I added the "L" section to do a [2 week agenda](https://emacs.stackexchange.com/questions/12517/how-do-i-make-the-timespan-shown-by-org-agenda-start-yesterday) with log mode turned on.
 		```
 		'(org-agenda-custom-commands
 		(quote
@@ -93,7 +92,8 @@ My initial attempt is partially documented below in **_First Install - Aquamacs_
 					(alltodo "" nil))\
 				nil))))
 	  ```
-   
+    4. Org files in the cloud. I have started expirimenting with [Orgzly](http://www.orgzly.com) and keeping an org file synced on my Android phone, my laptop, and my desktop. It's working OK so far.
+
 5. Auto-Complete 
    1. [Install package](https://github.com/auto-complete/auto-complete).
 	  * M-x package-install [RET] auto-complete [RET]
@@ -103,7 +103,7 @@ My initial attempt is partially documented below in **_First Install - Aquamacs_
 	  (add-to-list 'ac-modes 'markdown-mode)
 	  (add-to-list 'ac-modes 'org-mode)
 	  ```
-	  
+   
 6. [Spell Checking](https://stackoverflow.com/questions/19022015/emacs-on-mac-os-x-how-to-get-spell-check-to-work)
    1. At Terminal Prompt
 	  ```
@@ -114,7 +114,7 @@ My initial attempt is partially documented below in **_First Install - Aquamacs_
    3. Run Customize... from Edit->Spell menu
    4. Set ispell-program-name variable to `/usr/local/bin/aspell` or other return from earlier prompt command.
    5. Run Spell-Check Buffer from Edit->Spell menu
-   6. Note: Flyspell can work but needs a functional mouse-2 click which requires hackery for macOS track-pad.
+   6. __NOTE__ Flyspell can work but needs a functional mouse-2 click which requires hackery for macOS track-pad.
 
 7. [Magit](https://magit.vc/manual/magit/Installing-from-an-Elpa-Archive.html#Installing-from-an-Elpa-Archive): git version control
    1. M-x package-refresh-contents [RET]
@@ -133,8 +133,15 @@ My initial attempt is partially documented below in **_First Install - Aquamacs_
 	  One of the things I hoped to accomplish with Magit in emacs is a simple solution for publishing my static hand-crafted [personal website](https://www.lazym8.com). I was struggling because default behavior requires using two branches and then automating the merge to the master branch using [git hooks](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks), which was on my list to figure out, but since I don't ever edit the files on the server, push-to-deploy is more straight-forward. In the remote repository on the web server you only need to configure git with `git config receive.denyCurrentBranch updateInstead`  
    6. __NOTE__ I have not yet learned how to clone a repository with Magit
 
-8. [Mu4e](http://cachestocaches.com/2017/3/complete-guide-email-emacs-using-mu-and-/) - e-mail client
+8. [GNUS](https://www.gnu.org/software/emacs/manual/html_node/gnus/index.html) - research for use as e-mail client. Rejected Mu4e as too complicated.
 
+9. [Elfeed](https://github.com/skeeto/elfeed) - RSS Feed Reader
+
+10. [Bookmark Plus](https://www.emacswiki.org/emacs/BookmarkPlus#toc60)
+
+11. [Buffer Menu](https://www.emacswiki.org/emacs/BufferMenu)
+
+13. [Abbrev Mode](https://www.emacswiki.org/emacs/AbbrevMode) - I would like to figure out how to use this to add [categories](https://orgmode.org/manual/Categories.html) inside property blocks in Org mode.
 
 ## First Install - Aquamacs ##
 ### Things installed or configured ###
