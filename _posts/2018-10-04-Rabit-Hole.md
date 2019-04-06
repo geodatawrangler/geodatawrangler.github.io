@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Down the Emacs Rabbit Hole"
-date: 2019-03-07
+date: 2019-04-05
 ---
 
 Over the years I have followed the [holy](https://www.gnu.org/fun/jokes/gospel.html) [war](https://en.wikipedia.org/wiki/Editor_war) between [vi](https://en.wikipedia.org/wiki/Vi) and [Emacs](https://en.wikipedia.org/wiki/Emacs) with some interest. As a university student and a GIS Analyst using various versions of Unix, I was handed vi and taught to use it. vi was omnipresent and could be learned to a passable level in a short amount of time. So, I was a vi user. Emacs was alluring though. The old joke, that Emacs is "a great operating system, lacking only a decent editor"[1], was both a draw to and a caution against it's use. I tried it out a few times, but the requirement to learn so many commands with multiple meta keys was too much bother. I would give up after an hour or two, when I had to look up open a file for the eighth time.
@@ -14,6 +14,7 @@ My initial attempt is partially documented below in **_First Install - Aquamacs_
 
 ### This post is a living document:
 I'm using this post as a test-bed for the [Magit](https://magit.vc) portion of the content.
+* **April 5, 2019** Auto Complete Config fix; Add Saving Sessions and CSV-Mode to list of enhancements to explore
 * **March 7, 2019** Added list of enhancements to explore, and added a note about Orgzly.
 * **January 17, 2019** Figured out how to push-to-deploy.
 * **December 1, 2018** Fixed formatting and updated with experience installing Emacs on a completely fresh 2018 Mac Mini with Mojave.
@@ -97,7 +98,11 @@ I'm using this post as a test-bed for the [Magit](https://magit.vc) portion of t
    1. [Install package](https://github.com/auto-complete/auto-complete).
 	  * M-x package-install [RET] auto-complete [RET]
    2. [Add to init.el](https://emacs.stackexchange.com/questions/18982/how-do-i-make-auto-complete-enabled-by-default):
-	  ```(ac-config-default)
+	  ```
+      ;; Set up configuration for autocomplete
+	  ;; Among other things the first line pops-up doc strings for functions
+	  ;;  highlighted in AC's suggestions list, while in Emacs-Lisp mode.
+	  (ac-config-default) 
 	  (global-auto-complete-mode t)
 	  (add-to-list 'ac-modes 'markdown-mode)
 	  (add-to-list 'ac-modes 'org-mode)
