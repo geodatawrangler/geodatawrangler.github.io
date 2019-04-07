@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Down the Emacs Rabbit Hole"
-date: 2019-04-07
+date: 2019-04-06
 ---
 
 Over the years I have followed the [holy](https://www.gnu.org/fun/jokes/gospel.html) [war](https://en.wikipedia.org/wiki/Editor_war) between [vi](https://en.wikipedia.org/wiki/Vi) and [Emacs](https://en.wikipedia.org/wiki/Emacs) with some interest. As a university student and a GIS Analyst using various versions of Unix, I was handed vi and taught to use it. vi was omnipresent and could be learned to a passable level in a short amount of time. So, I was a vi user. Emacs was alluring though. The old joke, that Emacs is "a great operating system, lacking only a decent editor"[1], was both a draw to and a caution against it's use. I tried it out a few times, but the requirement to learn so many commands with multiple meta keys was too much bother. I would give up after an hour or two, when I had to look up open a file for the eighth time.
