@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Down the Emacs Rabbit Hole"
-date: 2019-05-16
+date: 2019-05-17
 ---
 
 Over the years I have followed the [holy](https://www.gnu.org/fun/jokes/gospel.html) [war](https://en.wikipedia.org/wiki/Editor_war) between [vi](https://en.wikipedia.org/wiki/Vi) and [Emacs](https://en.wikipedia.org/wiki/Emacs) with some interest. As a university student and a GIS Analyst using various versions of Unix, I was handed vi and taught to use it. vi was omnipresent and could be learned to a passable level in a short amount of time. So, I was a vi user. Emacs was alluring though. The old joke, that Emacs is "a great operating system, lacking only a decent editor"[1], was both a draw to and a caution against it's use. I tried it out a few times, but the requirement to learn so many commands with multiple meta keys was too much bother. I would give up after an hour or two, when I had to look up open a file for the eighth time.
@@ -14,7 +14,7 @@ My initial attempt is partially documented below in **_First Install - Aquamacs_
 
 ### This post is a living document:
 I'm using this post as a test-bed for the [Magit](https://magit.vc) portion of the content.
-* **May 16, 2019** Change the theme and the default font
+* **May 17, 2019** Change the theme and the default font
 * **April 7, 2019** Auto Complete Config fix; Add Saving Sessions and CSV-Mode to list of enhancements to explore
 * **March 7, 2019** Added list of enhancements to explore, and added a note about Orgzly.
 * **January 17, 2019** Figured out how to push-to-deploy.
@@ -23,8 +23,8 @@ I'm using this post as a test-bed for the [Magit](https://magit.vc) portion of t
 ## Fresh Install - Homebrew ##
 1. Install Emacs
    1. Install [Homebrew](https://brew.sh/)
-   3. At terminal prompt type `brew cask install emacs`
-   2. For MacOS 10.14 (Mojave) it is necessary to allow Emacs to control your computer.
+   2. At terminal prompt type `brew cask install emacs`
+   3. For MacOS 10.14 (Mojave) it is necessary to allow Emacs to control your computer.
 	  It will prompt you when it tries to do something that is not yet permitted. This is a setting in the _Security & Privacy_ panel in _System Preferences_ under the _Privacy_ tab with _Accessibility_ selected.
 2. Configure Interface - add items to init.el
     1. Line Numbers:
@@ -58,7 +58,7 @@ I'm using this post as a test-bed for the [Magit](https://magit.vc) portion of t
 	
 3. Markdown Mode for Emacs
     1. [Install package](https://jblevins.org/projects/markdown-mode/).
-       * M-x package-install RET markdown-mode RET
+       * M-x package-install [RET] markdown-mode [RET]
     2. [Pandoc](https://pandoc.org/)
        * At Terminal Prompt type `brew install Pandoc`
     3. Add to init.el inside the `(custom-set-variables` section before the final `)`:
@@ -72,9 +72,9 @@ I'm using this post as a test-bed for the [Magit](https://magit.vc) portion of t
 	  (define-key global-map "\C-ca" 'org-agenda)
 	  (setq org-log-done 'time)
 	  ```
-    2. For each .org file you want to participate in the Agenda open the file and issue command C-c [
+    1. For each .org file you want to participate in the Agenda open the file and issue command C-c [
    
-    3. Create a [Custom Agenda Command](https://orgmode.org/worg/org-tutorials/org-custom-agenda-commands.html)
+    2. Create a [Custom Agenda Command](https://orgmode.org/worg/org-tutorials/org-custom-agenda-commands.html)
     * __NOTE__ you can use: M-x customize-variable RET org-agenda-custom-commands
     * Otherwise, add the following text to init.el inside the `(custom-set-variables` section. The "n" option was included already I added the "L" section to do a [2 week agenda](https://emacs.stackexchange.com/questions/12517/how-do-i-make-the-timespan-shown-by-org-agenda-start-yesterday) with log mode turned on.
 		```
@@ -93,14 +93,14 @@ I'm using this post as a test-bed for the [Magit](https://magit.vc) portion of t
 					(alltodo "" nil))\
 				nil))))
 	  ```
-    4. Org files in the cloud. I have started experimenting with [Orgzly](http://www.orgzly.com) and keeping an org file synced on my Android phone, my laptop, and my desktop. It's working OK so far.
+    3. Org files in the cloud. I have started experimenting with [Orgzly](http://www.orgzly.com) and keeping an org file synced on my Android phone, my laptop, and my desktop. It's working OK so far.
 
 5. Auto-Complete 
    1. [Install package](https://github.com/auto-complete/auto-complete).
 	  * M-x package-install [RET] auto-complete [RET]
    2. [Add to init.el](https://emacs.stackexchange.com/questions/18982/how-do-i-make-auto-complete-enabled-by-default):
 	  ```
-      ;; Set up configuration for autocomplete
+      ;; Set up configuration for auto complete
 	  ;; Among other things the first line pops-up doc strings for functions
 	  ;;  highlighted in AC's suggestions list, while in Emacs-Lisp mode.
 	  (ac-config-default) 
@@ -128,7 +128,7 @@ I'm using this post as a test-bed for the [Magit](https://magit.vc) portion of t
 	  ```
 	  Magit 2.90.1, Git 2.17.2 (Apple Git-113), Emacs 26.1, darwin
 	  ```
-   4. Add a global key binding for magit-status to initl.el
+   4. Add a global key binding for magit-status to init.el
 	  ```
 	  ;; Configure magit
 	  ;; https://magit.vc/manual/magit/Getting-Started.html#Getting-Started
@@ -142,12 +142,26 @@ I'm using this post as a test-bed for the [Magit](https://magit.vc) portion of t
    I elected to use the handy GUI interface for this as I did it originally on my work computer (Windows) quickly while on break.
    1. Download the hipster coding font of your choice. I ended up downloading Fira Mono and Ubuntu Mono from [Google Fonts](https://fonts.google.com/?category=Monospace). Install them in the usual fashion for your [operating](https://support.apple.com/en-us/HT201749) [system](https://answers.microsoft.com/en-us/windows/forum/windows_10-start/installing-new-fonts-on-windows-10/09e5d7c3-0870-4998-adb9-fc5391e0fb49).
    2. Click on _Set Default Font..._ on the _Options_ menu and find the font you chose on the list.
-   3. Click on _Custom Themes_ on the _Customize Emacs_ submenu on the _Options_ menu and browse the themes listed there. After you decide which one to keep click the _Save Theme Settings_ button. I selected _leuven_ because of how it renders an org mode document.
-
-
-        ![org mode with leuven theme](/images/leuven_org_mode.png)
-8. Topics to explore in the future:
-   1. [CSV-Mode](https://www.emacswiki.org/emacs/CsvMode) - Allows collumn alignment and sorting by column. Also transposing columns and rows.
+   3. Click on _Custom Themes_ on the _Customize Emacs_ sub-menu on the _Options_ menu and browse the themes listed there. I selected _leuven_ because of how it renders an org mode document. After you decide which one to keep click the _Save Theme Settings_ button. __Just kidding!__ That worked on my Windows 10 Computer at work, but not on my Mac. I found [some directions on Stack Overflow](https://stackoverflow.com/questions/1257426/emacs-mac-osx-and-changing-default-font), which were slightly dated.  
+   ![org mode with leuven theme](/images/leuven_org_mode.png)
+   4. These Directions worked on MacOS for me:
+	  1. Type: M-x customize-face [RET]
+	  2. At "Customize face (...):" prompt type: default [RET]
+	  3. Edit _Font Family_ value to match what you see in the _Fonts_ dialog. In my case "Fira Mono".  
+	  ![_Fonts_ Dialog](/images/fonts.png)
+	  5. Uncheck all of the other options. If you do not those settings will override the settings in any subsequent theme that you choose in the _Custom Themes_ buffer.
+	  4. Click the _Apply and Save__ button. This will make a change in your init.el file like this:
+		 ```
+		 (custom-set-faces
+		 ;; custom-set-faces was added by Custom.
+		 ;; If you edit it by hand, you could mess it up, so be careful.
+		 ;; Your init file should contain only one such instance.
+		 ;; If there is more than one, they won't work right.
+		 '(default ((t (:family "Fira Mono")))))
+		 ```
+	  5. Exit the buffer using the graphic button in he tool bar at the top of the screen.
+9. Topics to explore in the future:
+    1. [CSV-Mode](https://www.emacswiki.org/emacs/CsvMode) - Allows column alignment and sorting by column. Also transposing columns and rows.
 
 	9. [Saving Sessions](https://www.gnu.org/software/emacs/manual/html_node/emacs/Saving-Emacs-Sessions.html) This looks very helpful to get figured out, so I don't have to keep loading the same files over and configuring my windows.
 
