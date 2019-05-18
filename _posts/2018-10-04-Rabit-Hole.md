@@ -75,7 +75,7 @@ I'm using this post as a test-bed for the [Magit](https://magit.vc) portion of t
     1. For each .org file you want to participate in the Agenda open the file and issue command C-c [
    
     2. Create a [Custom Agenda Command](https://orgmode.org/worg/org-tutorials/org-custom-agenda-commands.html)
-    * __NOTE__ you can use: M-x customize-variable RET org-agenda-custom-commands
+    * __NOTE__ you can use: M-x customize-variable [RET] org-agenda-custom-commands
     * Otherwise, add the following text to init.el inside the `(custom-set-variables` section. The "n" option was included already I added the "L" section to do a [2 week agenda](https://emacs.stackexchange.com/questions/12517/how-do-i-make-the-timespan-shown-by-org-agenda-start-yesterday) with log mode turned on.
 		```
 		'(org-agenda-custom-commands
