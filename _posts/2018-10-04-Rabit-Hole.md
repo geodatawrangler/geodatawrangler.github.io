@@ -1,26 +1,30 @@
 ---
 layout: post
 title: "Down the Emacs Rabbit Hole"
-date: 2019-05-17
+date: 2019-11-20
 ---
 
-Over the years I have followed the [holy](https://www.gnu.org/fun/jokes/gospel.html) [war](https://en.wikipedia.org/wiki/Editor_war) between [vi](https://en.wikipedia.org/wiki/Vi) and [Emacs](https://en.wikipedia.org/wiki/Emacs) with some interest. As a university student and a GIS Analyst using various versions of Unix, I was handed vi and taught to use it. vi was omnipresent and could be learned to a passable level in a short amount of time. So, I was a vi user. Emacs was alluring though. The old joke, that Emacs is "a great operating system, lacking only a decent editor"[1], was both a draw to and a caution against it's use. I tried it out a few times, but the requirement to learn so many commands with multiple meta keys was too much bother. I would give up after an hour or two, when I had to look up open a file for the eighth time.
+I update this post periodicaly in order to keep my Emacs configuration notes all together. The main content follows the change log.
 
-At the same time, I was experimenting with various ways of keeping track of my huge backlog of "to do" items. Often hundred's of items long. Tracking it in a Word document, tracking it in an excel spreadsheet. Using tabs in steno note book. When I finally gave up the fight and switched from paper notes to Microsoft OneNote, I started keeping the list in there. It did not work that well. Also, I have an ever growing fear that when Microsoft decides to move from OneNote to the next great thing, all my notes will be locked inside its proprietary file format. I've been burned with that problem in the past.
-
-I became aware of Org Mode. It was built within the platform that is Emacs. It uses plain text files. It has fantastic miraculous sounding capabilities. It can be version controlled with git. I can store it in the cloud. I've become familiar with using Markdown and Jekyll to publish my blogs on GitHub and I love the plain text files being used for markup. So I took a serious stab at using Emacs for the first time.
-
-My initial attempt is partially documented below in **_First Install - Aquamacs_**. While at the same time using it on my Windows 8.1 computer at work. That became frustrating because of the differences associated with Aquamacs. So I've set out to document fully how I got Emacs with Org Mode and all its other wonders in **_Fresh Install - Homebrew_**.
-
-### This post is a living document:
-I'm using this post as a test-bed for the [Magit](https://magit.vc) portion of the content.
+## Change Log: ##
+* **November 20, 2019** Replace linum mode with display-line-numbers mode
 * **May 17, 2019** Change the theme and the default font
 * **April 7, 2019** Auto Complete Config fix; Add Saving Sessions and CSV-Mode to list of enhancements to explore
 * **March 7, 2019** Added list of enhancements to explore, and added a note about Orgzly.
 * **January 17, 2019** Figured out how to push-to-deploy.
 * **December 1, 2018** Fixed formatting and updated with experience installing Emacs on a completely fresh 2018 Mac Mini with Mojave.
+* **October 4, 2018** Initial blog posted.
 
-## Fresh Install - Homebrew ##
+## I'm Late... ##
+Over the years I have followed the [holy](https://www.gnu.org/fun/jokes/gospel.html) [war](https://en.wikipedia.org/wiki/Editor_war) between [vi](https://en.wikipedia.org/wiki/Vi) and [Emacs](https://en.wikipedia.org/wiki/Emacs) with some interest. As a university student and a GIS Analyst using various versions of Unix, I was handed vi and taught to use it. vi was omnipresent and could be learned to a passable level in a short amount of time. So, I was a vi user. Emacs was alluring though. The old joke, that Emacs is "a great operating system, lacking only a decent editor"[<sup>1</sup>](#foot1), was both a draw to and a caution against it's use. I tried it out a few times, but the requirement to learn so many commands with multiple meta keys was too much bother. I would give up after an hour or two, when I had to look up open a file for the eighth time.
+
+At the same time, I was experimenting with various ways of keeping track of my huge backlog of "to do" items. Often hundred's of items long. Tracking it in a Word document, tracking it in an excel spreadsheet. Using tabs in steno note book. When I finally gave up the fight and switched from paper notes to Microsoft OneNote, I started keeping the list in there. It did not work that well. Also, I have an ever growing fear that when Microsoft decides to move from OneNote to the next great thing, all my notes will be locked inside its proprietary file format. I've been burned with that problem in the past.
+
+I became aware of Org Mode. It was built within the platform that is Emacs. It uses plain text files. It has fantastic miraculous sounding capabilities. It can be version controlled with git. I can store it in the cloud. I've become familiar with using Markdown and Jekyll to publish my blogs on GitHub and I love the plain text files being used for markup. So I took a serious stab at using Emacs for the first time.
+
+My initial attempt is partially documented below in **_[Aquamacs](#aquamacs)_**. While at the same time using it on my Windows 8.1 computer at work. That became frustrating because of the differences associated with Aquamacs. So I've set out to document fully how I got Emacs with Org Mode and all its other wonders in **_[Homebrew](#homebrew)_**.
+
+## Homebrew ##
 1. Install Emacs
    1. Install [Homebrew](https://brew.sh/)
    2. At terminal prompt type `brew cask install emacs`
@@ -30,9 +34,10 @@ I'm using this post as a test-bed for the [Magit](https://magit.vc) portion of t
     1. Line Numbers:
         + create file `~/.emacs.d/init.el` and add:
 		  ```
-		  (global-linum-mode t)
+		  (global-display-line-numbers-mode t)
 		  ```
-	
+		+ **Note**: Previously I was using linum-mode, which predates [display-line-numbers-mode](https://www.emacswiki.org/emacs/LineNumbers#toc1). I was experiencing significant typing delay in an approximately 2,000 line org file on Windows 10 at work. I determined that turning off linum removed the delay. I have changed my MacOS configuration as well for consistency. 
+		
     2. Recent Files
         * Add to init.el:
 		  ```
@@ -175,7 +180,7 @@ I'm using this post as a test-bed for the [Magit](https://magit.vc) portion of t
 
 	13. [Abbrev Mode](https://www.emacswiki.org/emacs/AbbrevMode) 
 
-## First Install - Aquamacs ##
+## Aquamacs ##
 ### Things installed or configured ###
 * line numbers
 * word wrap
@@ -184,7 +189,7 @@ I'm using this post as a test-bed for the [Magit](https://magit.vc) portion of t
 * markdown-mode
 * pandoc
 
-## Config customization ##
+### Config customization ###
 
 _/Users/paulmccombs/Library/Preferences/Aquamacs Emacs/Preferences.el_
 
@@ -239,5 +244,5 @@ _/Users/paulmccombs/Library/Preferences/Aquamacs Emacs/customizations.el_
  )
 ```
 
-### Foot Notes ###
-[1] [Editor war, _Wikipedia, The Free Encyclopedia_](https://en.wikipedia.org/w/index.php?title=Editor_war&oldid=862368474) (last visited Oct. 11, 2018).
+## Foot Notes ##
+<a name="foot1" />[1] [Editor war, _Wikipedia, The Free Encyclopedia_](https://en.wikipedia.org/w/index.php?title=Editor_war&oldid=862368474) (last visited Oct. 11, 2018).
