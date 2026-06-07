@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Paul's introduction to Geminispace"
+title: "Paul's Introduction to Geminispace"
 date: 2026-05-30
 ---
 ## Internet enshittification
