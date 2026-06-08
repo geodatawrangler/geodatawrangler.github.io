@@ -87,3 +87,5 @@ Now that I've started journaling here at SDF, I hope to implement this plan:
 4. Eventually create a publicly accessible archive of all my material in a central location.
 
 [Tales of Wrangling Geodata](https://geodatawrangler.lazym8.com/)
+
+*This post was originally published in Geminispace, an alternative to the modern web. You can learn more about it at [Gemini Quickstart](https://geminiquickst.art). If you are already using a Gemini browser you can view my blog content at gemini://sdf.org/paulmccombs/ .*
