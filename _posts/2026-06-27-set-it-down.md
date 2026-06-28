@@ -17,8 +17,6 @@ Now you kids get off my lawn.
 
 
 
-This text is available under the Creative Commons Attribution-ShareAlike 4.0 License
-
-[](https://en.wikipedia.org/wiki/Wikipedia:Text_of_the_Creative_Commons_Attribution-ShareAlike_4.0_International_License)
+This text is available under the [Creative Commons Attribution-ShareAlike 4.0 License](https://en.wikipedia.org/wiki/Wikipedia:Text_of_the_Creative_Commons_Attribution-ShareAlike_4.0_International_License)
 
 *This post was originally published in Geminispace, an alternative to the modern web. You can learn more about it at [Gemini Quickstart](https://geminiquickst.art). You can read about my decision to use Gemini protocol in [Paul's Introduction to Geminispace](https://geodatawrangler.lazym8.com/blog/2026/05/30/introduction-to-geminispace). If you are already using a Gemini browser you can view my blog content at gemini://sdf.org/paulmccombs/ .*
