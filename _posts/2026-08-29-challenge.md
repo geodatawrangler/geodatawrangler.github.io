@@ -28,9 +28,11 @@ The terminal challenge was  suggested by alfred on the SDF.org bboard RETRO foru
 ## Earlier Efforts
 I first started moving back to the terminal when I bought a Raspberry Pi 4 in 2020 to help occupy my COVID lock down hours. It can run a full GUI Linux, albeit a bit sluggishly so I turned to the terminal for convenience. Last year I installed MX Linux on an old MacBook Pro and pushed my command line tasks further to include ripping CDs. Finally I replaced Raspberry Pi OS on my Pi 4 with FreeBSD this summer and have not installed any graphical environment at all.
 
-Between my MX Linux and FreeBSD experiences I joined SDF.org* and added NetBSD to my collection. It is on SDF.org where I encountered alfred and his terminal challenge.
+Between my MX Linux and FreeBSD experiences I joined SDF.org◊ and added NetBSD to my collection. It is on SDF.org where I encountered alfred and his terminal challenge.
 
-* Details on how I joined SDF.org: find at: gemini://sdf.org/paulmccombs/gemlog/introduction-to-geminispace.gmi
+◊ Find details on how I joined SDF.org at: gemini://sdf.org/paulmccombs/gemlog/introduction-to-geminispace.gmi
+
+[◊ Paul's Introduction to Geminispace](Paul's Introduction to Geminispace)
 
 ## The Challenge Engaged
 I quickly found the first task I undertook after reading about the challenge. I received my son's football practice schedule as a Word .DOC file. Not a .DOCX file, which I could easily handled using Pandoc*, but an older format used by MS Word 97-2007. Too old for Pandoc. What I wanted to do was print it out to put up in our kitchen. Afterward, I shared my experience with the RETRO board.
@@ -93,7 +95,8 @@ After completing the .DOC file print and view task as part of the Terminal Chall
 
 † Mirror of my findings post on the RETRO board: find at: gemini://sdf.org/paulmccombs/gemlog/../mirror/word-doc-challenge.gmi
 
-[‡ View of PDF calendar viewed in the terminal (24k image)](/images/../images/pdftohtml-c.webp)
+[‡ View of PDF calendar viewed in the terminal (24k image)](/images/pdftohtml-c.webp)
+
 Δ antiword is a correction to a mistake I made in the post on bboard.
 
 © 2026 Paul McCombs 
