@@ -32,7 +32,7 @@ Between my MX Linux and FreeBSD experiences I joined SDF.org◊ and added NetBSD
 
 ◊ Find details on how I joined SDF.org at: gemini://sdf.org/paulmccombs/gemlog/introduction-to-geminispace.gmi
 
-[◊ Paul's Introduction to Geminispace](Paul's Introduction to Geminispace)
+[◊ Paul's Introduction to Geminispace](https://geodatawrangler.lazym8.com/blog/2026/05/30/introduction-to-geminispace)
 
 ## The Challenge Engaged
 I quickly found the first task I undertook after reading about the challenge. I received my son's football practice schedule as a Word .DOC file. Not a .DOCX file, which I could easily handled using Pandoc*, but an older format used by MS Word 97-2007. Too old for Pandoc. What I wanted to do was print it out to put up in our kitchen. Afterward, I shared my experience with the RETRO board.
