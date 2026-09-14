@@ -89,8 +89,6 @@ After completing the .DOC file print and view task as part of the Terminal Chall
 
 [§ LibreOffice: an open source office suite](https://www.libreoffice.org/)
 
-[‖ Catdoc: reads MS-Word file and puts its content as plain text on standard output](https://man.freebsd.org/cgi/man.cgi?query=catdoc&sektion=1&manpath=FreeBSD+5.2.1-RELEASE+and+Ports)
-
 [¶ Midnight Commander: a visual, dual-pane file manager](https://midnight-commander.org/)
 
 † Mirror of my findings post on the RETRO board: find at: gemini://sdf.org/paulmccombs/gemlog/../mirror/word-doc-challenge.gmi
@@ -98,6 +96,10 @@ After completing the .DOC file print and view task as part of the Terminal Chall
 [‡ View of PDF calendar viewed in the terminal (24k image)](/images/pdftohtml-c.webp)
 
 Δ antiword is a correction to a mistake I made in the post on bboard.
+
+[Δ Antiword is a free MS Word reader for Linux, RISC OS, etc.](https://web.archive.org/web/20221207132720/http://www.winfield.demon.nl/)
+
+Updated 2026-09-13 - corrigendum
 
 © 2026 Paul McCombs 
 This text is available under the Creative Commons Attribution-ShareAlike 4.0 License
